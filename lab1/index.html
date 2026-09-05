@@ -7,14 +7,33 @@
     <title>TLOU</title>
   </head>
   <body>
-    <section class="header"></section>
-
     <section class="hero-section">
-      <video autoplay muted loop playsinline class="background-video">
-        <source src="video-tlou1.mp4" type="video/mp4" />
+      <div class="header">
+        <img class="logo" src="logo.png" alt="" />
+      </div>
+      <video autoplay muted loop class="background-video">
+        <source src="video-tlou1.mp4" />
       </video>
 
-      <div class="hero-info"></div>
+      <div class="hero-content">
+        <h1>Top 5 TLOU characters</h1>
+        <div class="hero-info">
+          <div class="buttons">
+            <button type="button" onclick="info(0)">First place</button>
+            <button type="button" onclick="info(1)">Second place</button>
+            <button type="button" onclick="info(2)">Third place</button>
+            <button type="button" onclick="info(3)">Fourth place</button>
+            <button type="button" onclick="info(4)">Fifth place</button>
+          </div>
+          <div id="info">
+            <img src="" alt="" />
+            <h2></h2>
+            <p></p>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
