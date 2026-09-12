@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: #ff9a56;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+header,
+footer {
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  background-color: #ef7627;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+header ul a {
+  color: #a30262;
+}
+
+table {
+  width: 300px;
+  height: 200px;
+  border-collapse: collapse;
+}
+
+#MD,
+#NO,
+#SE {
+  margin: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 32px;
+  width: fit-content;
+  max-width: 1000px;
+  align-self: center;
+}
+
+header li {
+  list-style: none;
+}
+
+#MD th {
+  width: 100px;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  color: #b55690;
+}
+
+h2 {
+  font-size: 48px;
+  color: #a30262;
+}
+
+.description p {
+  font-size: 18px;
+  color: #b55690;
+}
+
+a .link {
+  color: #d52d00;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.list h3 {
+  font-size: 24px;
+  color: #b55690;
+}
+
+.list li,
+.list dt {
+  font-size: 18px;
+  color: #ff9a56;
+}
+
+.list dd {
+  font-size: 18px;
+  color: #d162a4;
+}
+
+dd {
+  margin-left: 40px;
+}
+
+footer p {
+  font-size: 20px;
+  color: #a30262;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+button {
+  background-color: #a30262;
+  border: none;
+  padding: 16px 32px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.country-image {
+  width: 500px;
+  width: 300px;
+  object-fit: cover;
+}
