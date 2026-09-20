@@ -61,7 +61,7 @@ const game = (choice) => {
     gameScore.draws = 0;
     gameScore.rounds = 0;
 
-    pcChoice.textContent = "PC: ";
+    pcChoice.textContent = " :PC";
     playerChoice.textContent = "Player: ";
     gameResult.textContent = "Game reset";
     scoreDisplay.textContent = "0 / 0 Draws: 0";
@@ -88,7 +88,7 @@ const game = (choice) => {
     pc = "scissors";
   }
 
-  pcChoice.textContent = "PC: " + pc;
+  pcChoice.textContent = pc + " :PC";
   playerChoice.textContent = "Player: " + player;
 
   gameScore.rounds++;
