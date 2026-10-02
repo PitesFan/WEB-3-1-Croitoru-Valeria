@@ -10,38 +10,51 @@
     <section id="shopping-list-section">
       <h2>Shopping List</h2>
       <input id="product-input" type="text" />
-      <button id="product-btn-start">Add first</button>
-      <button id="product-btn-end">Add last</button>
-      <button id="product-btn-del-start">Delete first</button>
-      <button id="product-btn-del-end">Delete last</button>
+      <div class="items-group">
+        <button id="product-btn-start">Add first</button>
+        <button id="product-btn-end">Add last</button>
+        <button id="product-btn-del-start">Delete first</button>
+        <button id="product-btn-del-end">Delete last</button>
+      </div>
+
       <p id="product-list"></p>
     </section>
 
     <section id="catalog-section">
-      <h2>Electronic Catalog</h2>
-      <p id="students-count"></p>
-
-      <h3>Add student</h3>
-      <input id="student-name" type="text" placeholder="Name" />
-      <input id="student-age" type="number" placeholder="Age" />
-      <input id="student-grade" type="number" placeholder="Grade" />
-      <button id="student-add">Add student</button>
-
-      <h3>Delete student</h3>
-      <input id="student-delete-name" type="text" placeholder="Student name" />
-      <button id="student-delete">Delete student</button>
-
-      <h3>Search student</h3>
-      <input
-        id="student-search-name"
-        type="text"
-        placeholder="Search student"
-      />
-      <button id="student-search">Search</button>
-      <p id="student-result"></p>
-
-      <h3>Catalog</h3>
-      <div id="catalog"></div>
+      <div class="items-group">
+        <h2>Electronic Catalog</h2>
+        <p id="students-count"></p>
+      </div>
+      <div class="items-group">
+        <h3>Add student</h3>
+        <input id="student-name" type="text" placeholder="Name" />
+        <input id="student-age" type="number" placeholder="Age" />
+        <input id="student-grade" type="number" placeholder="Grade" />
+        <button id="student-add">Add student</button>
+      </div>
+      <div class="items-group">
+        <h3>Delete student</h3>
+        <input
+          id="student-delete-name"
+          type="text"
+          placeholder="Student name"
+        />
+        <button id="student-delete">Delete student</button>
+      </div>
+      <div class="items-group">
+        <h3>Search student</h3>
+        <input
+          id="student-search-name"
+          type="text"
+          placeholder="Search student"
+        />
+        <button id="student-search">Search</button>
+        <p id="student-result"></p>
+      </div>
+      <div class="items-group">
+        <h3>Catalog</h3>
+        <div id="catalog"></div>
+      </div>
     </section>
 
     <script src="script.js"></script>

@@ -1,4 +1,3 @@
-// 1:
 let fruits = ["Apple", "Pear", "Banana", "Orange", "Kiwi"];
 
 console.log(fruits);
@@ -6,7 +5,6 @@ console.log(fruits[0]);
 console.log(fruits[fruits.length - 1]);
 console.log(fruits.length);
 
-// 2:
 let cities = ["Chisinau", "Balti", "Cahul"];
 cities.push("Orhei");
 cities.unshift("Soroca");
@@ -15,7 +13,6 @@ cities.pop();
 cities.shift();
 console.log(cities);
 
-// 3 and 4:
 let products = ["Bread", "Milk", "Eggs"];
 
 let productInput = document.getElementById("product-input");
@@ -61,7 +58,6 @@ productBtnDelEnd.addEventListener("click", function () {
 
 displayProducts();
 
-// 5:
 let students = [
   { name: "Popescu Ana", age: 17, grade: 9 },
   { name: "Rusu Mihai", age: 18, grade: 8 },
@@ -93,9 +89,9 @@ function displayStudents() {
       1 +
       ". " +
       student.name +
-      " Age: " +
+      ", Age: " +
       student.age +
-      " Grade: " +
+      ", Grade: " +
       student.grade;
     catalog.appendChild(p);
   });
@@ -136,9 +132,9 @@ studentSearch.addEventListener("click", function () {
     studentResult.textContent =
       "Student found! Name: " +
       found.name +
-      " Age: " +
+      ", Age: " +
       found.age +
-      " Grade: " +
+      ", Grade: " +
       found.grade;
   } else {
     studentResult.textContent = "Student not found!";
