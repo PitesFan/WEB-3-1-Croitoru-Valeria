@@ -139,6 +139,7 @@ studentSearch.addEventListener("click", () => {
   } else {
     studentResult.textContent = "Student not found!";
   }
+  studentSearchName.value = "";
 });
 
 displayStudents();
