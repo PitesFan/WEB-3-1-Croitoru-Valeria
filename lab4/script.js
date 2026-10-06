@@ -22,15 +22,15 @@ let productBtnDelStart = document.getElementById("product-btn-del-start");
 let productBtnDelEnd = document.getElementById("product-btn-del-end");
 let productList = document.getElementById("product-list");
 
-function displayProducts() {
+const displayProducts = () => {
   if (products.length === 0) {
     productList.textContent = "The list is empty!";
     return;
   }
   productList.textContent = products.join(" | ");
-}
+};
 
-productBtnEnd.addEventListener("click", function () {
+productBtnEnd.addEventListener("click", () => {
   let value = productInput.value;
   if (value === "") return;
   products.push(value);
@@ -38,7 +38,7 @@ productBtnEnd.addEventListener("click", function () {
   displayProducts();
 });
 
-productBtnStart.addEventListener("click", function () {
+productBtnStart.addEventListener("click", () => {
   let value = productInput.value;
   if (value === "") return;
   products.unshift(value);
@@ -46,12 +46,12 @@ productBtnStart.addEventListener("click", function () {
   displayProducts();
 });
 
-productBtnDelStart.addEventListener("click", function () {
+productBtnDelStart.addEventListener("click", () => {
   products.shift();
   displayProducts();
 });
 
-productBtnDelEnd.addEventListener("click", function () {
+productBtnDelEnd.addEventListener("click", () => {
   products.pop();
   displayProducts();
 });
@@ -79,10 +79,10 @@ let studentSearchName = document.getElementById("student-search-name");
 let studentSearch = document.getElementById("student-search");
 let studentResult = document.getElementById("student-result");
 
-function displayStudents() {
+const displayStudents = () => {
   studentsCount.textContent = "Number of students: " + students.length;
   catalog.textContent = "";
-  students.forEach(function (student, index) {
+  students.forEach((student, index) => {
     let p = document.createElement("p");
     p.textContent =
       index +
@@ -95,9 +95,9 @@ function displayStudents() {
       student.grade;
     catalog.appendChild(p);
   });
-}
+};
 
-studentAdd.addEventListener("click", function () {
+studentAdd.addEventListener("click", () => {
   let name = studentName.value;
   let age = studentAge.value;
   let grade = studentGrade.value;
@@ -111,9 +111,9 @@ studentAdd.addEventListener("click", function () {
   displayStudents();
 });
 
-studentDelete.addEventListener("click", function () {
+studentDelete.addEventListener("click", () => {
   let name = studentDeleteName.value;
-  let index = students.findIndex(function (student) {
+  let index = students.findIndex((student) => {
     return student.name === name;
   });
   if (index !== -1) {
@@ -123,9 +123,9 @@ studentDelete.addEventListener("click", function () {
   displayStudents();
 });
 
-studentSearch.addEventListener("click", function () {
+studentSearch.addEventListener("click", () => {
   let name = studentSearchName.value;
-  let found = students.find(function (student) {
+  let found = students.find((student) => {
     return student.name === name;
   });
   if (found) {
