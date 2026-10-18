@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cards</title>
+  </head>
+  <body>
+    <section id="form-section">
+      <input id="student-name" type="text" placeholder="Name" />
+      <input id="student-age" type="text" placeholder="Age" />
+      <input id="student-group" type="text" placeholder="Group" />
+      <input id="student-major" type="text" placeholder="Major" />
+      <input id="student-avatar" type="text" placeholder="Avatar" />
+      <button id="add-btn">Add</button>
+    </section>
+
+    <section id="controls">
+      <label
+        >justify-content:
+        <select id="justify-select">
+          <option value="flex-start">flex-start</option>
+          <option value="center">center</option>
+          <option value="flex-end">flex-end</option>
+          <option value="space-between">space-between</option>
+          <option value="space-around">space-around</option>
+          <option value="space-evenly">space-evenly</option>
+        </select>
+      </label>
+
+      <label
+        >align-items:
+        <select id="align-select">
+          <option value="stretch">stretch</option>
+          <option value="flex-start">flex-start</option>
+          <option value="center">center</option>
+          <option value="flex-end">flex-end</option>
+        </select>
+      </label>
+
+      <label
+        >flex-wrap:
+        <select id="wrap-select">
+          <option value="wrap">wrap</option>
+          <option value="nowrap">nowrap</option>
+        </select>
+      </label>
+
+      <label
+        >gap:
+        <input id="gap-input" type="range" min="0" max="50" value="10" />
+        <span id="gap-value">10</span>px
+      </label>
+    </section>
+
+    <p id="student-count">Students: 1</p>
+
+    <section id="cards-section"></section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f4f5;
+  color: #1c1c1c;
+}
+
+#form-section {
+  display: flex;
+  flex-direction: column;
+  margin: 32px 40px 0 40px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+input {
+  color: #1c1c1c;
+  background-color: #d36109;
+  border: none;
+  padding: 12px 20px;
+  width: 300px;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #1c1c1c;
+  color: #d36109;
+  border: none;
+  padding: 12px 20px;
+  width: 300px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #d8d8d9;
+}
+
+#controls {
+  display: flex;
+  flex-direction: column;
+  margin: 32px 40px 0 40px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 300px;
+  color: #1c1c1c;
+}
+
+select {
+  color: #1c1c1c;
+  background-color: #d36109;
+  border: none;
+  padding: 12px 20px;
+  width: 300px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#gap-input {
+  width: 300px;
+  padding: 0;
+  background-color: transparent;
+  accent-color: #d36109;
+}
+
+#gap-value {
+  color: #d36109;
+  font-weight: bold;
+}
+
+#student-count {
+  margin: 32px 40px 0 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1c1c1c;
+}
+
+#cards-section {
+  display: flex;
+  min-height: 200px;
+  margin: 32px 40px;
+  padding: 20px;
+  background-color: #1c1c1c;
+  border-radius: 4px;
+}
+
+#cards-section > p {
+  color: #d8d8d9;
+  margin: auto;
+  font-size: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #d36109;
+  color: #1c1c1c;
+  padding: 20px;
+  min-width: 200px;
+  border-radius: 4px;
+}
+
+.card h3 {
+  color: #1c1c1c;
+  font-size: 20px;
+}
+
+.card p {
+  color: #1c1c1c;
+}
+
+.card button {
+  background-color: #1c1c1c;
+  color: #d36109;
+  border: none;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: auto;
+}
