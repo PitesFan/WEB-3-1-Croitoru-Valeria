@@ -7,19 +7,20 @@
     <title>Cards</title>
   </head>
   <body>
-    <section id="form-section">
-      <input id="student-name" type="text" placeholder="Name" />
-      <input id="student-age" type="text" placeholder="Age" />
-      <input id="student-group" type="text" placeholder="Group" />
-      <input id="student-major" type="text" placeholder="Major" />
-      <input id="student-avatar" type="text" placeholder="Avatar" />
-      <button id="add-btn">Add</button>
-    </section>
+    <form id="addElev">
+      <input id="name" type="text" placeholder="Name" />
+      <input id="age" type="text" placeholder="Age" />
+      <input id="major" type="text" placeholder="Major" />
+      <input id="group" type="text" placeholder="Group" />
+      <button type="submit">Add</button>
+    </form>
 
-    <section id="controls">
-      <label
-        >justify-content:
-        <select id="justify-select">
+    <div id="error"></div>
+
+    <div id="controls">
+      <label>
+        justify-content:
+        <select id="justify-content">
           <option value="flex-start">flex-start</option>
           <option value="center">center</option>
           <option value="flex-end">flex-end</option>
@@ -29,9 +30,9 @@
         </select>
       </label>
 
-      <label
-        >align-items:
-        <select id="align-select">
+      <label>
+        align-items:
+        <select id="align-items">
           <option value="stretch">stretch</option>
           <option value="flex-start">flex-start</option>
           <option value="center">center</option>
@@ -39,24 +40,21 @@
         </select>
       </label>
 
-      <label
-        >flex-wrap:
-        <select id="wrap-select">
-          <option value="wrap">wrap</option>
-          <option value="nowrap">nowrap</option>
-        </select>
+      <label>
+        flex-wrap:
+        <input id="wrap" type="checkbox" />
       </label>
 
-      <label
-        >gap:
-        <input id="gap-input" type="range" min="0" max="50" value="10" />
-        <span id="gap-value">10</span>px
+      <label>
+        gap:
+        <input id="numberIn" type="number" min="0" value="10" />
+        <button id="submitNumber" type="button">Set</button>
       </label>
-    </section>
+    </div>
 
-    <p id="student-count">Students: 1</p>
+    <p>Students: <span id="count">0</span></p>
 
-    <section id="cards-section"></section>
+    <section id="studentList"></section>
 
     <script src="script.js"></script>
   </body>

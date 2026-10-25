@@ -2,129 +2,179 @@ let students = [
   {
     id: 1,
     name: "Valeria Croitoru",
-    age: "18",
+    age: 18,
     group: "DAW-241",
-    major: "Web Application Development",
-    avatar: "🐱",
+    major: "Web development",
+  },
+  {
+    id: 2,
+    name: "Valeria Croitoru",
+    age: 18,
+    group: "DAW-241",
+    major: "Web development",
+  },
+  {
+    id: 3,
+    name: "Valeria Croitoru",
+    age: 18,
+    group: "DAW-241",
+    major: "Web development",
+  },
+  {
+    id: 4,
+    name: "Valeria Croitoru",
+    age: 18,
+    group: "DAW-241",
+    major: "Web development",
+  },
+  {
+    id: 5,
+    name: "Valeria Croitoru",
+    age: 18,
+    group: "DAW-241",
+    major: "Web development",
+  },
+  {
+    id: 6,
+    name: "Valeria Croitoru",
+    age: 18,
+    group: "DAW-241",
+    major: "Web development",
   },
 ];
 
-let nextId = 2;
+let nextId = 7;
 
-const displayStudents = () => {
-  const cardsSection = document.getElementById("cards-section");
-  cardsSection.innerHTML = "";
+const sl = document.getElementById("studentList");
+const count = document.getElementById("count");
+const error = document.getElementById("error");
+
+const addStudentHTML = (student) => {
+  const card = document.createElement("div");
+  card.className = "student";
+  sl.appendChild(card);
+
+  const avatar = document.createElement("img");
+  avatar.className = "student-img";
+  avatar.setAttribute("src", "avatar.png");
+  card.appendChild(avatar);
+
+  const name = document.createElement("p");
+  name.className = "name";
+  name.innerText = student.name;
+  card.appendChild(name);
+
+  const group = document.createElement("p");
+  group.innerText = student.group;
+  card.appendChild(group);
+
+  const ageLabel = document.createElement("p");
+  ageLabel.className = "label";
+  ageLabel.innerText = "Age:";
+  card.appendChild(ageLabel);
+
+  const age = document.createElement("p");
+  age.className = "value";
+  age.innerText = student.age;
+  card.appendChild(age);
+
+  const majorLabel = document.createElement("p");
+  majorLabel.className = "label";
+  majorLabel.innerText = "Major:";
+  card.appendChild(majorLabel);
+
+  const major = document.createElement("p");
+  major.className = "value";
+  major.innerText = student.major;
+  card.appendChild(major);
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.innerText = "Delete";
+  deleteBtn.addEventListener("click", () => {
+    deleteStudent(student.id);
+  });
+  card.appendChild(deleteBtn);
+};
+
+const addStudentsHTML = () => {
+  sl.innerHTML = "";
+  count.innerText = students.length;
 
   if (students.length === 0) {
     const msg = document.createElement("p");
-    msg.textContent = "No students in the list.";
-    cardsSection.appendChild(msg);
-    updateCount();
+    msg.textContent = "The list is empty. No students.";
+    sl.appendChild(msg);
     return;
   }
 
-  students.forEach((student) => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    const name = document.createElement("h3");
-    name.textContent = student.name;
-
-    const group = document.createElement("p");
-    group.textContent = "Group: " + student.group;
-
-    const age = document.createElement("p");
-    age.textContent = "Age: " + student.age + " years";
-
-    const major = document.createElement("p");
-    major.textContent = "Major: " + student.major;
-
-    const avatar = document.createElement("p");
-    avatar.textContent = student.avatar;
-
-    const delBtn = document.createElement("button");
-    delBtn.textContent = "Delete";
-    delBtn.addEventListener("click", () => deleteStudent(student.id));
-
-    card.appendChild(avatar);
-    card.appendChild(name);
-    card.appendChild(group);
-    card.appendChild(age);
-    card.appendChild(major);
-    card.appendChild(delBtn);
-
-    cardsSection.appendChild(card);
-  });
-
-  updateCount();
+  students.forEach((student) => addStudentHTML(student));
 };
 
-const addStudent = () => {
-  const nameVal = document.getElementById("student-name").value.trim();
-  const ageVal = document.getElementById("student-age").value.trim();
-  const groupVal = document.getElementById("student-group").value.trim();
-  const majorVal = document.getElementById("student-major").value.trim();
-  const avatarVal = document.getElementById("student-avatar").value.trim();
+addStudentsHTML();
 
-  if (!nameVal || !ageVal || !groupVal || !majorVal || !avatarVal) {
-    alert("All fields must be filled in!");
+const form = document.getElementById("addElev");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const ageText = document.getElementById("age").value.trim();
+  const major = document.getElementById("major").value.trim();
+  const group = document.getElementById("group").value.trim();
+  const age = Number(ageText);
+
+  if (name === "" || ageText === "" || major === "" || group === "") {
+    error.innerText = "Please fill in all fields!";
     return;
   }
-
-  const ageNum = Number(ageVal);
-  if (!Number.isInteger(ageNum) || ageNum < 14 || ageNum > 100) {
-    alert("Age must be an integer between 14 and 100!");
+  if (!Number.isInteger(age) || age < 14 || age > 100) {
+    error.innerText = "Age must be an integer between 14 and 100!";
     return;
   }
 
   students.push({
-    id: nextId++,
-    name: nameVal,
-    age: ageVal,
-    group: groupVal,
-    major: majorVal,
-    avatar: avatarVal,
+    id: nextId,
+    name: name,
+    age: age,
+    group: group,
+    major: major,
   });
+  nextId++;
 
-  document.getElementById("student-name").value = "";
-  document.getElementById("student-age").value = "";
-  document.getElementById("student-group").value = "";
-  document.getElementById("student-major").value = "";
-  document.getElementById("student-avatar").value = "";
-
-  displayStudents();
-};
-
-const deleteStudent = (id) => {
-  students = students.filter((s) => s.id !== id);
-  displayStudents();
-};
-
-const updateCount = () => {
-  document.getElementById("student-count").textContent =
-    "Students: " + students.length;
-};
-
-const applyFlex = () => {
-  const cardsSection = document.getElementById("cards-section");
-  cardsSection.style.display = "flex";
-  cardsSection.style.justifyContent =
-    document.getElementById("justify-select").value;
-  cardsSection.style.alignItems = document.getElementById("align-select").value;
-  cardsSection.style.flexWrap = document.getElementById("wrap-select").value;
-  cardsSection.style.gap = document.getElementById("gap-input").value + "px";
-};
-
-document.getElementById("add-btn").addEventListener("click", addStudent);
-
-document.getElementById("justify-select").addEventListener("change", applyFlex);
-document.getElementById("align-select").addEventListener("change", applyFlex);
-document.getElementById("wrap-select").addEventListener("change", applyFlex);
-
-document.getElementById("gap-input").addEventListener("input", (e) => {
-  document.getElementById("gap-value").textContent = e.target.value;
-  applyFlex();
+  error.innerText = "";
+  form.reset();
+  addStudentsHTML();
 });
 
-applyFlex();
-displayStudents();
+function deleteStudent(id) {
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].id === id) {
+      students.splice(i, 1);
+      break;
+    }
+  }
+  addStudentsHTML();
+}
+
+const justifyValue = document.getElementById("justify-content");
+justifyValue.addEventListener("change", () => {
+  sl.style.justifyContent = justifyValue.value;
+});
+
+const alignValue = document.getElementById("align-items");
+alignValue.addEventListener("change", () => {
+  sl.style.alignItems = alignValue.value;
+});
+
+const wrapValue = document.getElementById("wrap");
+wrapValue.addEventListener("change", () => {
+  sl.style.flexWrap = wrapValue.checked ? "wrap" : "nowrap";
+});
+
+const gapValue = document.getElementById("numberIn");
+const submitGap = document.getElementById("submitNumber");
+submitGap.addEventListener("click", () => {
+  if (gapValue.value !== "") {
+    sl.style.gap = gapValue.value + "px";
+  }
+});

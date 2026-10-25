@@ -8,34 +8,42 @@
 body {
   background-color: #f4f4f5;
   color: #1c1c1c;
+  padding: 20px;
 }
 
-#form-section {
+#addElev,
+#controls {
   display: flex;
   flex-direction: column;
-  margin: 32px 40px 0 40px;
-  gap: 20px;
-  justify-content: center;
+  gap: 12px;
   align-items: center;
-  width: 100%;
+  margin-bottom: 24px;
 }
 
-input {
-  color: #1c1c1c;
-  background-color: #d36109;
-  border: none;
-  padding: 12px 20px;
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input,
+select,
+button {
   width: 300px;
+  padding: 12px 16px;
+  border: none;
   border-radius: 4px;
+}
+
+input,
+select {
+  background-color: #d36109;
+  color: #1c1c1c;
 }
 
 button {
   background-color: #1c1c1c;
   color: #d36109;
-  border: none;
-  padding: 12px 20px;
-  width: 300px;
-  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -43,70 +51,29 @@ input::placeholder {
   color: #d8d8d9;
 }
 
-#controls {
-  display: flex;
-  flex-direction: column;
-  margin: 32px 40px 0 40px;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-#controls label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 300px;
-  color: #1c1c1c;
-}
-
-select {
-  color: #1c1c1c;
-  background-color: #d36109;
-  border: none;
-  padding: 12px 20px;
-  width: 300px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#gap-input {
-  width: 300px;
-  padding: 0;
-  background-color: transparent;
-  accent-color: #d36109;
-}
-
-#gap-value {
-  color: #d36109;
-  font-weight: bold;
-}
-
-#student-count {
-  margin: 32px 40px 0 40px;
+#error {
+  color: red;
   text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #1c1c1c;
+  margin-bottom: 16px;
 }
 
-#cards-section {
+#studentList {
   display: flex;
-  min-height: 200px;
-  margin: 32px 40px;
+  align-items: flex-start;
+  min-height: 600px;
   padding: 20px;
   background-color: #1c1c1c;
   border-radius: 4px;
+  gap: 12px;
 }
 
-#cards-section > p {
+#studentList > p {
   color: #d8d8d9;
   margin: auto;
   font-size: 18px;
 }
 
-.card {
+.student {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -117,22 +84,26 @@ select {
   border-radius: 4px;
 }
 
-.card h3 {
-  color: #1c1c1c;
+.student-img {
+  width: 40px;
+  height: 40px;
+}
+
+.name {
+  font-weight: bold;
   font-size: 20px;
 }
 
-.card p {
-  color: #1c1c1c;
+.label {
+  font-weight: bold;
+  font-size: 13px;
 }
 
-.card button {
-  background-color: #1c1c1c;
-  color: #d36109;
-  border: none;
-  padding: 12px 20px;
+.value {
+  font-size: 14px;
+}
+
+.student button {
   width: 100%;
-  border-radius: 4px;
-  cursor: pointer;
   margin-top: auto;
 }
